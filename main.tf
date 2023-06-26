@@ -64,14 +64,14 @@ module "eks" {
   cluster_endpoint_public_access = true
 
   eks_managed_node_group_defaults = {
-    ami_type    = "AL2_x86_64"
+    ami_type = "AL2_x86_64"
   }
 
   eks_managed_node_groups = {
     one = {
       name           = "node-group-1"
       instance_types = ["t3a.small"]
-        block_device_mappings = {
+      block_device_mappings = {
         xvda = {
           device_name = "/dev/xvda"
           ebs = {
@@ -92,7 +92,7 @@ module "eks" {
     two = {
       name           = "node-group-2"
       instance_types = ["t3a.small"]
-        block_device_mappings = {
+      block_device_mappings = {
         xvda = {
           device_name = "/dev/xvda"
           ebs = {
